@@ -1,0 +1,223 @@
+/* ==================== GLOBAL DARK THEME ==================== */
+body{
+    font-family:'Segoe UI',Tahoma;
+    margin:0;
+    background: radial-gradient(circle at 50% 50%, #5A0FD6, #150026 70%, #090011 100%);
+    background-attachment: fixed;
+    color:#fff;
+}
+
+/* ==================== TOP NAV ==================== */
+.admin-top,.admin-topbar{
+    width:100%;
+    background:rgba(157, 78, 221,.25);
+    backdrop-filter:blur(8px);
+    padding:15px 25px;
+    position:fixed;
+    top:0;left:0;
+    display:flex;
+    justify-content:flex-end;
+    gap:35px;
+    font-size:18px;
+    font-weight:bold;
+    box-shadow:0 3px 20px rgba(0,0,0,.55);
+    z-index:999;
+}
+.admin-top a,.admin-topbar a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+.admin-top a:hover,.admin-topbar a:hover{
+    color:#d9b3ff; transform:scale(1.1);
+}
+
+/* ================= SIDEBAR ================= */
+.admin-sidebar{
+    width:300px;
+    background:#03000B;
+    color:white;
+    position:fixed;
+    top:0; bottom:0; left:0;
+    padding:30px;
+    padding-top:95px;
+    box-shadow:4px 0 35px rgba(145,0,255,.35);
+    font-size:19px;
+}
+
+.admin-sidebar a{
+    display:block;
+    padding:14px 18px;
+    margin-bottom:12px;
+    font-size:18px;
+    border-radius:10px;
+    font-weight:600;
+    text-decoration:none;
+    color:white;
+    transition:.25s ease;
+}
+
+.admin-sidebar a:hover{
+    transform:translateX(10px);
+    filter:brightness(1.4);
+}
+
+/* Colors */
+.admin-sidebar a:nth-child(2){background:#a855f7;} /* Dashboard – بنفسجي نيون */
+.admin-sidebar a:nth-child(3){background:#38bdf8;} /* Users – أزرق سماوي */
+.admin-sidebar a:nth-child(4){background:#facc15;} /* Add User – أصفر لامع */
+.admin-sidebar a:nth-child(5){background:#ec4899;} /* Posts – وردي نيون */
+.admin-sidebar a:nth-child(6){background:#f87171;} /* Comments – أحمر فاتح */
+.admin-sidebar a:last-child{background:#6b7280;} /* Logout – رمادي أنيق */
+
+
+
+.active{ border:3px solid #fff082; }
+
+/* ==================== MAIN CONTENT ==================== */
+.admin-content{
+    margin-left:300px;
+    margin-top:110px;
+    padding:40px;
+    width:calc(100% - 300px);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:40px;
+}
+.admin-content h1{
+    font-size:32px;
+    color:#e5ccff;
+    text-shadow:0 0 10px #a46cff;
+    font-weight:bold;
+}
+
+/* ===================================== FORMS (Add User + Add Post SAME STYLE) =================* ===== FORM LAYOUT (Fix Transparency) ===== */
+
+.form-box, .post-box{
+    width:65%;
+    max-width:850px;
+    background:rgba(255,255,255,.12);      /* بدل .07 → أوضح */
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 0 25px rgba(162,0,255,.45);
+    backdrop-filter:blur(14px);            /* أقوى وضوح */
+    border:1px solid rgba(255,255,255,.22);
+    text-align:left;
+    margin-top:30px;
+}
+
+/* ===== INPUT FIELDS ===== */
+.form-box input, 
+.post-box input,
+.form-box textarea,
+.post-box textarea,
+.form-box select{
+    width:100%;
+    padding:14px;
+    font-size:15px;
+    background:#ECE9FF;                    /* لون واضح مثل إضافة البوست */
+    border-radius:10px;
+    border:1px solid #C7B7FF;
+    color:#2d1f55;                          /* مو أبيض عشان يقرا بوضوح */
+    margin-bottom:18px;
+    outline:none;
+    transition:.25s;
+}
+
+.form-box input:focus, .post-box input:focus,
+.form-box textarea:focus, .post-box textarea:focus,
+.form-box select:focus{
+    box-shadow:0 0 15px #B37CFF;
+    transform:scale(1.03);
+}
+
+/* ===== BUTTON ===== */
+.form-box button, .post-box button{
+    background:#b264ff;
+    color:#fff;
+    font-size:17px;
+    padding:12px 25px;
+    border:none;
+    border-radius:9px;
+    cursor:pointer;
+    transition:.25s;
+}
+.form-box button:hover, .post-box button:hover{
+    background:#D191FF;
+    transform:scale(1.09);
+}
+
+
+/* ====================== TABLES — USERS / POSTS / COMMENTS ====================== */
+.admin-table,.posts-table{
+    width:90%;
+    border-collapse: collapse;
+    font-size:16px;
+    color:#F1E6FF;
+    overflow:hidden;
+    border-radius:12px;
+    backdrop-filter:blur(10px);
+}
+
+/* Header */
+.admin-table th,.posts-table th{
+    background:#8A2BE2;
+    color:#fff;
+    padding:14px;
+    text-align:center;
+    font-size:17px;
+}
+
+/* Rows */
+.admin-table td,.posts-table td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #6633B8;
+    background:#3A1560;
+}
+
+/* Even Row */
+.admin-table tr:nth-child(even),.posts-table tr:nth-child(even){
+    background:#4A1F78;
+}
+
+/* Hover */
+.admin-table tr:hover,.posts-table tr:hover{
+    background:#A970FF;
+    color:#000;
+}
+
+/* Action Links */
+a.edit{ color:#9D7FFF; font-weight:bold; }
+a.delete{ color:#FF4D6D; font-weight:bold; }
+a.approve{ color:#00FFB2; }
+
+/* ===================== DASHBOARD BOXES ===================== */
+.dashboard-box{
+    width:28%;
+    min-width:250px;
+    background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.15);
+    padding:25px;
+    border-radius:16px;
+    text-align:center;
+    transition:.3s;
+    box-shadow:0 0 25px rgba(162,0,255,.35);
+}
+.dashboard-box:hover{
+    transform:scale(1.06);
+    box-shadow:0 0 35px rgba(208,134,255,.65);
+}
+.dashboard-box h3{ font-size:23px; color:#E6D7FF; }
+.dashboard-box p.count{ font-size:34px; font-weight:700; color:white; }
+.dashboard-box a{
+    background:#9D4EDD;
+    padding:10px 20px;
+    border-radius:9px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+.dashboard-box a:hover{ background:#7029CC; }
